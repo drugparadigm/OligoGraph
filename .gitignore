@@ -1,0 +1,6 @@
+Checkpoints/best_model.pt
+Data/processed_data/train_data.pkl
+Data/processed_data/val_data_2.pkl
+Checkpoints/
+Data/processed_data/train_data.pkl
+Data/processed_data/val_data_2.pkl
