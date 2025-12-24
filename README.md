@@ -171,7 +171,7 @@ Time       Epoch  Train Loss   Train PCC  Val Acc    Val AUC-ROC  Val AUC-PR   V
 Evaluate the trained model on test data:
 
 ```bash
-python test.py
+python src/test.py
 ```
 
 #### Testing Output

@@ -173,14 +173,14 @@ def main():
     Main function to orchestrate the inference pipeline.
     """
     logger.info("=" * 80)
-    logger.info("RNAiSight Test Script with Checkpoint Metrics")
+    logger.info("OligoGraph Test Script with Checkpoint Metrics")
     logger.info("=" * 80)
 
     # --- Configuration ---
     MODEL_PATH = 'Checkpoints/best_model.pt'
     DATA_PATH = 'Data/processed_data/val_data.pkl'
     OUTPUT_CSV_PATH = 'Data/test_results.csv'
-    DEVICE = torch.device('cuda:2' if torch.cuda.is_available() else 'cpu')
+    DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # --- Prerequisite Checks ---
     if not os.path.exists(MODEL_PATH):
@@ -197,8 +197,8 @@ def main():
     # --- Model Loading ---
     try:
         logger.info(f"Loading model checkpoint from {MODEL_PATH}...")
-        checkpoint = torch.load(MODEL_PATH, map_location=DEVICE)
-        
+        # checkpoint = torch.load(MODEL_PATH, map_location=DEVICE)
+        checkpoint = torch.load(MODEL_PATH, map_location=DEVICE, weights_only=False)
         # Display checkpoint information
         #display_checkpoint_info(checkpoint)
         
